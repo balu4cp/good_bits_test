@@ -5,7 +5,7 @@ To run this project, do the following steps
 virtualenv -p python3 venv
 ###### 3.Activate environment
 source venv/bin/activate
-###### 4   python manage.py -r requirement.txt
+###### 4   pip install -r requirement.txt
 ###### 5.create database with name 'finance_db' (postgres database)
 ###### 6.  python manage makemigrations
 ###### 7.  python manage migrate
