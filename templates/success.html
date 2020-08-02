@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block link %}
+{% endblock %}
+{% block title %}{% endblock %}
+{% block page_css %}
+<style>
+body { 
+  background-image: url('/static/success.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%; 
+}
+</style>
+{% endblock %}
+{% block body %}
+<body ></body>
+
+{% endblock %}
+{% block script %}
+<script type="text/javascript">
+	GBL.hideLoading();
+	$("#logout").addClass("d-none")
+	window.menubar.visible = false ;
+	window.toolbar.visible = false ;;
+</script>
+{% endblock %}

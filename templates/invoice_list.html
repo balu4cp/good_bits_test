@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block link %}
+{% endblock %}
+{% block title %}{% endblock %}
+{% block page_css %}{% endblock %}
+{% block body %}
+
+<div class="container">
+  <h2>Invoice list</h2>
+  <div class="text-right">
+  <button type="button" class="btn btn-success" data-bind="click:redirectToCreatePage" >Add invoice</button>       
+  </div>    
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Invoice ID</th>
+        <th>Client name</th>
+        <th>Project</th>
+        <th>Email</th>
+        <th>Amount</th>
+        <th>Payment link</th>
+        <th>Status</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- ko foreach: invoice_list -->
+      <tr>
+        <td><!-- ko text: invoice_number --><!-- /ko --></td>
+        <td><!-- ko text: client_name --><!-- /ko --></td>
+        <td><!-- ko text: project_name --><!-- /ko --></td>
+        <td><!-- ko text: email --><!-- /ko --></td>
+        <td><!-- ko text: amount --><!-- /ko --></td>
+        <td><!-- ko text: payment_link --><!-- /ko --></td>
+        <td><!-- ko text: status --><!-- /ko --></td>
+        <!-- ko if: status=='PENDING' -->
+        <td><button class="btn btn-info" data-bind="click:$root.sendEmail">Email payment link</button></td>
+         <!-- /ko -->
+      </tr>
+      <!-- /ko -->
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
+{% block script %}
+ <script src='{% static "js/custom/invoice_list.js" %}'></script>
+{% endblock %}
