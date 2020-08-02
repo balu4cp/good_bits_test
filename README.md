@@ -19,3 +19,7 @@ source venv/bin/activate
 ###### 10. In templates/invoice_payement.html,
 - add STRIPE_PUBLISHABLE_KEY in line 71  // var stripe = Stripe('< YOUR STRIPE PUBLISHABLE KEY>');
 ###### 11  python manage.py runserver
+
+Login credentials
+- username admin
+- password admin@123
